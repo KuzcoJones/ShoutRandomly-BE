@@ -1,17 +1,18 @@
 class CommentsController < ApplicationController
 
     def create
-        comment = Comment.create!(comment_params)
-        
-    end
-
-    def show
+        # create a new comment and return the Shout and all of the comments on that Shout
+        byebug
     end
 
     def update
+        # update comment and return shout with all of the comments 
+        byebug
     end
 
     def destroy
+        # delete comment and return message. only if the current_user match the user_id on comment. return message
+        byebug
     end
 
     private
