@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   
   resources :shouts, only: [:index, :create, :show, :update, :destroy]
 
-  resources :users, only: [:index, :create, :show, :update]
+  resources :users, only: [:index, :show, :update]
+
+  post 'signup', to: 'users#create', as: '/signup'
 
   post 'login', to: 'auth#create', as: '/login'
   get 'current_user', to: 'auth#show', as: '/current_user'
