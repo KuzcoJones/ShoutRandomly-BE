@@ -27,7 +27,12 @@ class UsersController < ApplicationController
 
     def show
         # return a user's info, and their shouts maybe recent shouts?
-        byebug
+        user = User.find(params['id'])
+
+        render json: user.to_json(
+            only: [:username, :imgUrl, :bio], include: [shouts:{only: [:body, :likeCount, :commentCount]}]
+        )
+       
     end
 
     def update
